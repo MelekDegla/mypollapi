@@ -18,7 +18,7 @@ class CreatePollsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('question')->nullable(false);
-            $table->boolean('activated');
+            $table->boolean('activated')->default(false);
           
             $table->timestamps();
         });

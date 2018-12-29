@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Answers extends Model
 {
     //
-    protected $fillable = ['poll_id','label'];
+    protected $fillable = ['polls_id','label','votes'];
+
+
 }

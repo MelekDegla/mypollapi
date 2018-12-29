@@ -15,9 +15,10 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_poll')->unsigned();
-            $table->foreign('id_poll')->references('id')->on('polls');
+            $table->integer('polls_id')->unsigned();
+            $table->foreign('polls_id')->references('id')->on('polls');
             $table->string('label');
+            $table->bigInteger('votes')->default(0);
             $table->timestamps();
         });
     }

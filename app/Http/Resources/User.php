@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Polls extends JsonResource
+class User extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,9 +14,6 @@ class Polls extends JsonResource
      */
     public function toArray($request)
     {
-        return ['id'=> $this->id,
-                'question' => $this->question,
-                'answers' => $this->answers,
-            ];
+        return parent::toArray($request);
     }
 }

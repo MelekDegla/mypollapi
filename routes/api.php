@@ -21,5 +21,15 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
 Route::get('/polls',"PollsController@index");
 Route::get('/poll/{id}',"PollsController@findbyid");
 Route::post('/poll',"PollsController@save");
-route::put('/poll/{id}',"pollsController@update");
+route::put('/poll/{id}',"PollsController@update");
+route::get('/poll/{id}/activate',"PollsController@activate");
+route::get('/poll/{id}/full',"PollsController@pollWithAnswers");
+
+route::get('/vote/{id}',"AnswersController@vote");
+route::get('/user/{id}',"UserController@getActivated");
+route::get('/poll/user/{id}',"PollsController@getPollByUserId");
+route::post('/poll/ans',"PollsController@savePollWithAnswers");
+route::post('/answer',"AnswersController@save");
+route::get('/polls/user/{id}',"PollsController@getPollsByUserId");
+
 
